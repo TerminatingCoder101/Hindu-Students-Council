@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content = "IE-edge">
+        <meta name="description" content="Stanford, Hindu, Students, Association, HSA">
+        <meta name="keywords" content="stanford, students, group, hindu, religion">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/Logos/Stanford4.png">
+    
+        <title>Stanford Hindu Students Association</title>
+    
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="about.css"/>   
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
+    </head>
+<body>
+
+    <header class = "header" id = "navbar">
+        <a href="index.html" class = "logo"><img src="img/Logos/favicon2.ico"></a>
+        <a href="index.html" class = "orgName">Stanford Hindu Students Association</a>
+		<i class='bx bx-menu' id="menu-icon" style='color:#ffffff'></i>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="gallery.html">Gallery</a>
+                <div class="dropdown">
+                    <button class="dropbtn" style="background-color: transparent;">Events</button>
+                    <div class="dropdown-content" style="background-color: grey; padding-bottom: 10px; padding-right: 25px; padding-top: 10px;">
+                        <a href="a_events.html">Annual Events</a>
+                        <a href="w_events.html">Weekly Events</a>
+                        <a href="Diwali.html">Diwali 2023</a>
+                    </div>
+                </div>
+				<div class="break">
+					<br>
+				</div>
+                <a href="about.html">About Us</a>
+                <a href="contacts.html">Meet The Board</a>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="about">
+        <div id="aboutUS">
+            <h1><center>About Us</center></h1>
+        </div>
+        <a href="#aboutPara">
+            <div class="scroll-down"></div>
+        </a>
+    </section>
+
+    <section id="aboutPara">
+        <div class="aboutuspara">
+            <center>The Stanford Hindu Students Association (HSA)  is a VSO dedicated to bringing 
+                together students interested in learning about Sanatan Dharma and allowing them 
+                to meet like-minded individuals while connecting with their religion and culture.
+                 As a part of the HSA, students become part of a close-knit community where best 
+                 friends are made. Together, this HSA community organizes events such as Diwali, 
+                 plans trips to various places such as temples and other universities, partners 
+                 with other on-campus organizations to hold massive community service events, and 
+                 even goes on retreats to places like Lake Tahoe and Olema. We hope you are as 
+                 excited as us to join HSA—not only to attend our events, but to help organize 
+                 them as well!
+            </center>
+            <p style="padding-top: 5px;"><center>“...नमो ब्रह्मणे । नमस्ते वायो । त्वमेव प्रत्यक्षं ब्रह्मासि । त्वामेव प्रत्यक्षं ब्रह्म वदिष्यामि । 
+                ॠतं वदिष्यामि । सत्यं वदिष्यामि ।…” 
+            </center></p>
+            <p id="mantra-author" style="padding-top: 5px; font-size: 5px;"> <center>— Siksha Valli — Taittiriya Upanishad</center></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+		<div class="footer-text">
+			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Developed by Sagar Shah | 
+				Stanford Hindu Students Association | All Rights Reserved | Contact: seasky@stanford.edu</p>
+		</div>
+		<div class="footer-iconTop">
+			<a href="#home"><i class="fa fa-instagram" style="font-size:36px"></i></a>
+		</div>
+	</footer>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		// Add click event listener to the menu-icon
+			document.getElementById("menu-icon").addEventListener("click", function (event) {
+				let menuIcon = document.querySelector('#menu-icon');
+				let breaks = document.querySelector(".break");
+				var navigation = document.querySelector(".navigation");
+				menuIcon.classList.toggle('bx-x');
+				navigation.classList.toggle("active");
+				breaks.classList.toggle('show');
+				event.stopPropagation(); // Prevent body click event from firing immediately
+			});
+
+			// Add click event listener to the body
+			document.body.addEventListener("click", function (event) {
+				let breaks = document.querySelector(".break");
+				var navigation = document.querySelector(".navigation");
+				var menuIcon = document.getElementById("menu-icon");
+
+				// Check if the click target is not inside the navigation and not the menu-icon
+				if (!navigation.contains(event.target) && event.target !== menuIcon) {
+					breaks.classList.remove('show');
+					navigation.classList.remove("active"); // Close the navigation
+					menuIcon.classList.remove('bx-x');
+				}
+			});
+		});
+	</script>
+
+</body>
+
+
+</html>

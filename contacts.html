@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content = "IE-edge">
+	<meta name="description" content="Stanford, Hindu, Students, Association, HSA">
+	<meta name="keywords" content="stanford, students, group, hindu, religion">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/Logos/Stanford4.png">
+
+    <title>Stanford Hindu Students Association</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="contacts.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+</head>
+<body>
+
+    <header class = "header" id = "navbar">
+        <a href="index.html" class = "logo"><img src="img/Logos/favicon2.ico"></a>
+        <a href="index.html" class = "orgName">Stanford Hindu Students Association</a>
+		<i class='bx bx-menu' id="menu-icon" style='color:#ffffff'></i>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="gallery.html">Gallery</a>
+                <div class="dropdown">
+                    <button class="dropbtn" style="background-color: transparent;">Events</button>
+                    <div class="dropdown-content" style="background-color: grey; padding-bottom: 10px; padding-right: 25px; padding-top: 10px;">
+                        <a href="a_events.html">Annual Events</a>
+                        <a href="w_events.html">Weekly Events</a>
+                        <a href="Diwali.html">Diwali 2023</a>
+                    </div>
+                </div>
+				<div class="break">
+					<br>
+				</div>
+                <a href="about.html">About Us</a>
+                <a href="contacts.html">Meet The Board</a>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="title">
+        <h2><center>Meet The Fantastic Board!</center></h2>
+    </div>
+
+    <div class="slide-container ">
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="image-content">
+                        <span class="overlay"></span>
+                        <div class="card-image">
+                            <img src="img/S_Shah.jpg" alt="" class="card-img">
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">Akash Shah</h2>
+                        <p class="description">Class of 2026</p>
+                    
+                        <!-- <button class="button">View More</button> -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-content">
+                        <span class="overlay"></span>
+                        <div class="card-image">
+                            <img src="img/Logos/Stanford Om Symbol.jpg" alt="" class="card-img">
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">Avinash Thakkar</h2>
+                        <p class="description">Class of 2025</p>
+                    
+                        <!-- <button class="button">View More</button> -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-content">
+                        <span class="overlay"></span>
+                        <div class="card-image">
+                            <img src="img/M_Govil.jpg" alt="" class="card-img">
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">Mishika Govil</h2>
+                        <p class="description">Class of 2025</p>
+                    
+                        <!-- <button class="button">View More</button> -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="image-content">
+                        <span class="overlay"></span>
+                        <div class="card-image">
+                            <img src="img/S_Nagaraj.jpg" alt="" class="card-img">
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <h2 class="name">Sanjay Nagaraj</h2>
+                        <p class="description">Class of 2025</p>
+                    
+                        <!-- <button class="button">View More</button> -->
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <!-- <footer class="footer">
+		<div class="footer-text">
+			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Developed by Sagar Shah | 
+				Stanford Hindu Students Association | All Rights Reserved | Contact: seasky4us2@stanford.edu</p>
+		</div>
+	</footer> -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		// Add click event listener to the menu-icon
+			document.getElementById("menu-icon").addEventListener("click", function (event) {
+				let menuIcon = document.querySelector('#menu-icon');
+				let breaks = document.querySelector(".break");
+				var navigation = document.querySelector(".navigation");
+				menuIcon.classList.toggle('bx-x');
+				navigation.classList.toggle("active");
+				breaks.classList.toggle('show');
+				event.stopPropagation(); // Prevent body click event from firing immediately
+			});
+
+			// Add click event listener to the body
+			document.body.addEventListener("click", function (event) {
+				let breaks = document.querySelector(".break");
+				var navigation = document.querySelector(".navigation");
+				var menuIcon = document.getElementById("menu-icon");
+
+				// Check if the click target is not inside the navigation and not the menu-icon
+				if (!navigation.contains(event.target) && event.target !== menuIcon) {
+					breaks.classList.remove('show');
+					navigation.classList.remove("active"); // Close the navigation
+					menuIcon.classList.remove('bx-x');
+				}
+			});
+		});
+	</script>
+
+</body>
+
+</html>

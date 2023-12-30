@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@100&family=Young+Serif&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Young Serif', sans-serif;
+}
+
+html {
+    font-size: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background: rgb(158, 158, 158);
+    color: white; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: url('img/aarti.jpg');
+    background-size: cover;
+}
+
+section {
+    min-height: 100vh;
+    padding: 100px 200px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.header{
+    z-index: 100;
+    position: absolute;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px;
+    transition: 0.5s ease;
+    border: 2px solid rgb(189, 189, 189);
+    border-radius: 50px;
+}
+
+
+.logo img{
+    border-radius: 20%;
+    font-size: 1.5em;
+}
+
+.orgName{
+    color: white;
+    font-size: 20px;
+}
+
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #ffff;
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before{
+    width: 100%;
+}
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+  
+.dropdown .dropbtn {
+    position: relative;
+    color: #ffff;
+    background-color: black;
+    font-size: 1em;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+  
+  
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 10px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #fff;
+    padding: 4px 4px;
+    display: block;
+  }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display:block;}
+
+
+section{
+    padding: 100px 200px;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* Calendar Section */
+
+.event-container{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.event-container h3.year{
+    font-size: 25px;
+    text-align: center;
+}
+
+.event-container .event{
+    border: 1px solid black;
+    box-shadow: 0 15px 16px -8px rgba(0, 0, 0, 0.4);
+    background-color: rgb(173, 173, 173);
+    display: flex;
+    border-radius: 15px;
+    margin: 32px 0;
+    transition: 0.5s ease;
+}
+
+.event-container .event:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 15px 16px -8px rgba(0, 0, 0, 0.4);
+
+}
+
+.event .event-left{
+    background: #636262;
+    min-width: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 8px 48px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.event .event-left .date{
+    font-size: 56px;
+}
+
+.event .event-left .month{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.event .event-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 24px;
+}
+
+.event .event-right h3.event-title{
+    font-size: 24px;
+    margin: 24px 0 10px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.event .event-right .event-timing{
+    background: rgb(122, 122, 122);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px;
+    border-radius: 16px;
+    margin: 24px 0;
+    font-size: 14px;
+}
+
+.event .event-right .event-timing img{
+    height: 20px;
+    padding-right: 15px;
+    padding-left: 5px;
+    color: white;
+}
+
+.event .event-right .event-timing a{
+    height: 20px;
+    text-decoration: underline;
+    padding-left: 15px;
+    color: #fff;
+}
+
+/* **********Other Stuff ************* */
+
+#progress{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    /* border: 2px solid black; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+#progress:hover{
+    transform: scale(1.3);
+}
+
+#progress-value{
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    color: #001a2e;
+}
+
+/* ********* Footer Section ******** */
+
+.footer{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 9%;
+    border-radius: 1.8rem;
+}
+
+.footer-text p{
+    font-size: 15px;
+}
+
+/* ******* For Mobile Dev only ********** */
+
+.break{
+    display: none;
+}
+
+.break.show{
+    display: flex;
+}
+
+#menu-icon{
+    font-size: 2.5rem;
+    color: white;
+    display: none;
+}
+
+/* ********For All Sized Phones ********** */
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    body{
+        font-size: 16px;
+    }
+
+    section{
+        padding: 50px 10px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .header {
+        height: auto;
+        padding: 10px;
+        border: none;
+    }
+
+    header .navigation .navigation-items a:hover:before{
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 100;
+        transition: .5s ease;
+    }
+
+    .navigation{
+        background-color: rgb(176, 175, 175);
+        position: absolute;
+        height: 100%;
+        width: 50px;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        inset: -10px 0 0 50%;
+        padding: 3rem 1%;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+        display: none;
+        border-radius: 25px;
+    }
+
+    .navigation.active{
+        display: block;
+    }
+
+    .navigation a{
+        display: block;
+        font-size: 2rem;
+    }
+
+    .orgName{
+        display: none;
+    }
+
+    .logo img {
+        display: block;
+        margin: 0 auto;
+        width: 40px;
+        position: fixed;
+        top: 7px;
+        left: 7px;
+    }
+
+    .scroll-down {
+        bottom: 10px;
+    }
+
+    .scroll-down::before,
+    .scroll-down::after {
+        top: 20%; /* Adjust position for smaller screens */
+    }
+
+    /* Adjust footer styles for smaller screens */
+    .footer {
+        padding: 10px;
+        text-align: center;
+    }
+    .footer-text p {
+        font-size: 14px;
+    }
+}
+
+/* *****For Devices Bigger Than Phones (iPads, etc) ********* */
+
+@media screen and (min-width: 601px) and (max-width: 1300px) {
+    body{
+        font-size: 25px;
+    }
+
+    section{
+        padding: 50px 10px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .header {
+        height: auto;
+        padding: 10px;
+        border: none;
+    }
+
+    header .navigation .navigation-items a:hover:before{
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+        position: fixed;
+        font-size: 55px;
+        top: 5px;
+        right: 5px;
+        z-index: 100;
+        transition: .5s ease;
+    }
+
+    .navigation{
+        background-color: rgb(176, 175, 175);
+        position: absolute;
+        height: 100%;
+        width: 50px;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        inset: -10px 0 0 50%;
+        padding: 3rem 1%;
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+        display: none;
+        border-radius: 25px;
+    }
+
+    .navigation.active{
+        display: block;
+    }
+
+    .navigation a{
+        display: block;
+        font-size: 2rem;
+    }
+
+    .orgName{
+        display: none;
+    }
+
+    .logo img {
+        display: block;
+        margin: 0 auto;
+        width: 50px;
+        position: fixed;
+        top: 7px;
+        left: 7px;
+    }
+
+}
+
+
+/* ******* End Of CSS File ******** */

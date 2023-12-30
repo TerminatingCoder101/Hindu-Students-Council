@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content = "IE-edge">
+	<meta name="description" content="Stanford, Hindu, Students, Association, HSA">
+	<meta name="keywords" content="stanford, students, group, hindu, religion">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanford Hindu Students Association</title>
+    <link rel="icon" href="img/Logos/Stanford4.png">
+
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i" rel="stylesheet">
+
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="home.css"/>
+
+</head>
+<body>
+	
+    <header class = "header" id = "navbar">
+        <a href="index.html" class = "logo"><img src="img/Logos/favicon2.ico"></a>
+        <a href="index.html" class = "orgName">Stanford Hindu Students Association</a>
+		<i class='bx bx-menu' id="menu-icon" style='color:#ffffff'></i>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="gallery.html">Gallery</a>
+                <div class="dropdown">
+                    <button class="dropbtn" style="background-color: transparent;">Events</button>
+                    <div class="dropdown-content" style="background-color: grey; padding-bottom: 10px; padding-right: 25px; padding-top: 10px;">
+                        <a href="a_events.html">Annual Events</a>
+                        <a href="w_events.html">Weekly Events</a>
+                        <a href="Diwali.html">Diwali 2023</a>
+                    </div>
+                </div>
+				<div class="break">
+					<br>
+				</div>
+                <a href="about.html">About Us</a>
+                <a href="contacts.html">Meet The Board</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="progress">
+        <span id="progress-value">&#x1F815;</span>
+    </div>
+
+    <section id="home">
+		<!-- <div id="preloader" class="container">
+			<div class="ring"></div>
+			<div class="ring"></div>
+			<div class="ring"></div>
+			<span class="loading"><img src="img/Logos/Stanford Om Symbol.jpg" alt=""></span>
+		</div> -->
+
+        <video id="background-video" class="screen" autoplay loop playsinline muted>
+			<source id="video-source" src="img/Diwali Video Big Screen.mp4" type="video/mp4"></video>
+        <div class="content">
+            <h1>Welcome to the <br>Stanford Hindu Students Association</h1>
+			<center><a href="https://www.instagram.com/stanfordhindu/?hl=en" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram'></i></a></center>
+		</div>
+        <a href="#upNextSection">
+            <div class="scroll-down"></div>
+        </a>
+    </section>
+
+	<section id="upNextSection">
+		<div class="container">
+			<div class="section-title">
+				<h2><center>Upcoming Major Events At Stanford!</center></h2>
+			</div>
+		</div>
+		<div class="event-container">
+			<h3 class="year">2023</h3>
+			<div class="event">
+				<div class="event-left">
+					<div class="event-date">
+						<div class="date">12</div>
+						<div class="month">Nov</div>
+					</div>
+				</div>
+
+				<div class="event-right">
+					<h3 class="event-title" style="padding-left: 35px;">Diwali</h3>
+					<div class="event-description"><center>
+						This year, Stanford Diwali will be held on Sunday, November 12, from 4 pm to 7:30 pm at the Memorial Church on Stanford campus.
+						Please click on the link below for more information regarding the program (ticket information included).
+					</center></div>
+					<div class="event-timing">
+						<img src="img/clock_calendar.png" alt=""> 4:00 P.M.
+						<a href="Diwali.html">Diwali</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Event list section end-->
+	<footer class="footer">
+		<div class="footer-text">
+			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Developed by Sagar Shah | 
+				Stanford Hindu Students Association | All Rights Reserved | Contact: seasky@stanford.edu</p>
+		</div>
+	</footer>
+
+    <script src = "script.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		// Add click event listener to the menu-icon
+			document.getElementById("menu-icon").addEventListener("click", function (event) {
+				let menuIcon = document.querySelector('#menu-icon');
+				let breaks = document.querySelector(".break");
+				var navigation = document.querySelector(".navigation");
+				menuIcon.classList.toggle('bx-x');
+				navigation.classList.toggle("active");
+				breaks.classList.toggle('show');
+				event.stopPropagation(); // Prevent body click event from firing immediately
+			});
+
+			// Add click event listener to the body
+			document.body.addEventListener("click", function (event) {
+				let breaks = document.querySelector(".break");
+				var navigation = document.querySelector(".navigation");
+				var menuIcon = document.getElementById("menu-icon");
+
+				// Check if the click target is not inside the navigation and not the menu-icon
+				if (!navigation.contains(event.target) && event.target !== menuIcon) {
+					breaks.classList.remove('show');
+					navigation.classList.remove("active"); // Close the navigation
+					menuIcon.classList.remove('bx-x');
+				}
+			});
+
+			function changeVideoSource() {
+				const video = document.getElementById('background-video');
+				const source = document.getElementById('video-source');
+
+				if (window.innerWidth <= 1100) {
+					source.src = 'img/Diwali 2023 Mobile Version.mp4'; 
+				} else {
+					source.src = 'img/Diwali Video Big Screen.mp4'; 
+				}
+				video.load();
+        	}
+
+			window.addEventListener('resize', changeVideoSource);
+			window.addEventListener('load', changeVideoSource); 
+		});
+
+	</script>
+
+</body>
+
+
+</html>
